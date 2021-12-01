@@ -1,0 +1,42 @@
+.block-heading {
+	--gap: 1.5rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-right: calc(var(--gap) * -1);
+	margin-left: calc(var(--gap) * -1);
+
+	& > * {
+		padding: 0 var(--gap);
+		margin-bottom: 3rem;
+	}
+
+	&__desc,
+	&__interaction {
+		flex: 1 1 50%;
+	}
+
+	&__titlegroup {
+		@include generalVertSpacing(1.2rem);
+	}
+
+	&__interaction {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+@include media("<tablet") {
+	.block-heading {
+		&__desc,
+		&__interaction {
+			flex-basis: 100%;
+		}
+
+		&__interaction {
+			justify-content: stretch;
+		}
+	}
+}

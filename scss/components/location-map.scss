@@ -1,0 +1,16 @@
+.location-map {
+	position: relative;
+	overflow: hidden;
+	border-radius: 1.6rem;
+
+	&::before {
+		display: block;
+		width: 100%;
+		padding-top: 54.4%;
+		content: " ";
+	}
+
+	& > * {
+		@include bg-stretch-img($hasImgChild: false);
+	}
+}

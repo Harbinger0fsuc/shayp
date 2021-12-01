@@ -1,0 +1,62 @@
+.heading-decorated {
+	&__inner {
+		position: relative;
+		z-index: zIndex("default");
+		padding-bottom: 5rem;
+		padding-left: 25rem;
+	}
+
+	&__img,
+	&__circle {
+		position: absolute;
+		top: 0;
+		z-index: zIndex("below");
+		pointer-events: none;
+	}
+
+	&__img {
+		left: 2rem;
+		width: 100%;
+		max-width: 17.5rem;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__circle {
+		left: -4rem;
+		width: 12rem;
+		height: 12rem;
+		background-color: var(--color-white);
+		border-radius: 50%;
+		opacity: 0.1;
+	}
+}
+
+@include media("<desktop") {
+	.heading-decorated {
+		&__inner {
+			padding-left: 20rem;
+		}
+
+		&__circle {
+			left: 0;
+			width: 9rem;
+			height: 9rem;
+		}
+
+		&__img {
+			max-width: 13rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.heading-decorated {
+		&__inner {
+			padding-top: 13rem;
+			padding-left: 0;
+		}
+	}
+}

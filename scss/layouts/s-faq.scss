@@ -1,0 +1,22 @@
+.s-faq {
+	padding: 7.2rem 0 10rem;
+
+	&__inner {
+		width: 100%;
+		max-width: 85.2rem;
+	}
+
+	.pills-list {
+		margin-bottom: 5rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-faq {
+		padding: 6.5rem 0 10rem;
+
+		.pills-list {
+			margin-bottom: 3rem;
+		}
+	}
+}

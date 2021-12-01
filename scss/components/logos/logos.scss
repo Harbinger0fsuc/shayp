@@ -1,0 +1,132 @@
+.logos {
+	$this: &;
+
+	--gap: 3rem;
+
+	&:not(.logos--slider) {
+		#{$this}__list {
+			@include flexCenter;
+
+			flex-wrap: wrap;
+			margin: 0 calc(var(--gap) * -1);
+		}
+
+		#{$this}__item {
+			padding: 0 var(--gap);
+			margin-bottom: 2.5rem;
+		}
+
+		#{$this}__img {
+			display: flex;
+
+			img {
+				width: auto;
+				max-width: 25rem;
+				height: auto;
+				max-height: 10rem;
+			}
+		}
+	}
+
+	&--slider {
+		position: relative;
+
+		#{$this}__item {
+			display: flex;
+			align-items: center;
+			height: auto;
+		}
+
+		#{$this}__img {
+			width: 100%;
+			height: auto;
+			text-align: center;
+		}
+
+		.swiper-pagination {
+			display: none;
+			justify-content: center;
+			margin-top: 1.6rem;
+		}
+
+		.swiper-button {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: zIndex("common");
+			display: none;
+			align-items: center;
+			justify-content: center;
+			width: 16px;
+			height: 16px;
+			background-color: transparent;
+			transform: translateY(-50%);
+
+			&-next {
+				right: 0;
+				left: initial;
+			}
+
+			&__icon {
+				fill: var(--text-color-accent);
+			}
+		}
+	}
+}
+
+@include media(">=tablet") {
+	.logos {
+		$this: &;
+
+		&--slider {
+			.swiper,
+			.swiper-wrapper,
+			.swiper-slide {
+				all: unset;
+			}
+
+			#{$this}__list,
+			#{$this}__item {
+				display: flex;
+			}
+
+			#{$this}__list {
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-around;
+				margin: 0 -1.5rem;
+			}
+
+			#{$this}__item {
+				padding-right: 1.5rem;
+				padding-left: 1.5rem;
+				margin-bottom: 1.5rem;
+			}
+
+			#{$this}__img {
+				width: auto;
+				height: auto;
+			}
+		}
+	}
+}
+
+@include media("<tablet") {
+	.logos {
+		$this: &;
+
+		&--slider {
+			padding-right: 4rem;
+			padding-left: 4rem;
+
+			#{$this}__list {
+				margin-bottom: 0;
+			}
+
+			.swiper-pagination,
+			.swiper-button {
+				display: flex;
+			}
+		}
+	}
+}

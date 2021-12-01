@@ -1,0 +1,20 @@
+.s-indicators {
+	padding: 7.5rem 0;
+}
+
+@include media("<desktop") {
+	.s-indicators {
+		padding: 6rem 0;
+	}
+}
+
+@include media("<tablet") {
+	.s-indicators {
+		padding: 3rem 0;
+
+		// Modifiers
+		&--software-first {
+			padding-top: 6.6rem;
+		}
+	}
+}

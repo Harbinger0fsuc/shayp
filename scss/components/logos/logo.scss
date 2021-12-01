@@ -1,0 +1,50 @@
+.logo {
+	--logo-top-color: #f9feff;
+	--logo-middle-color: #bee3ff;
+	--logo-middle-color-2: #9bcdff;
+	--logo-bottom-color: #5890f5;
+	--logo-lines-color: #6aa8c6;
+
+	$this: &;
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+
+		& > * {
+			margin-right: 1.4rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__img,
+	&__text {
+		flex-shrink: 0;
+	}
+
+	&__img {
+		width: auto;
+		max-width: 5rem;
+		height: auto;
+		object-fit: contain;
+	}
+
+	&__text {
+		font-weight: 600;
+		color: var(--text-color-primary);
+		text-transform: capitalize;
+		white-space: nowrap;
+	}
+
+	// Modifiers for the component
+	&--dark {
+		--logo-top-color: #5dc3e2;
+		--logo-middle-color: #3a8dcc;
+		--logo-middle-color-2: #276eb5;
+		--logo-bottom-color: #2954a1;
+		--logo-lines-color: #2954a1;
+	}
+}

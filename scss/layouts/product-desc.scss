@@ -1,0 +1,19 @@
+.product-desc {
+	padding: 7.5rem 0 6rem;
+}
+
+@include media("<desktop") {
+	.product-desc {
+		padding: 6rem 0;
+	}
+}
+
+@include media("<tablet") {
+	.product-desc {
+		// Modifiers for the section
+		&--hardware-first {
+			padding: 0 0 2.8rem;
+			margin-top: -5rem;
+		}
+	}
+}

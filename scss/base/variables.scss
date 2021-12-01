@@ -1,0 +1,229 @@
+// -- Common breakpoints
+// -- ligatured operators ≥ ≤
+$breakpoints: (
+	"full": 1920px,
+	"xl": 1680px,
+	"macbook": 1440px,
+	"ipad-pro": 1366px,
+	"md-desktop": 1200px,
+	"desktop": 1024px,
+	"tablet": 768px,
+	"phone": 667px,
+	"md-phone": 568px,
+	"sm-phone": 480px,
+	"xs-phone": 375px,
+);
+
+// -- Specific media
+$media-expressions: (
+	"iphoneX": "(min-width: 812px) and (max-height: 414px) and (orientation: landscape)",
+	"screen": "screen",
+	"print": "print",
+	"handheld": "handheld",
+	"landscape": "(orientation: landscape)",
+	"portrait": "(orientation: portrait)",
+	"retina2x": "(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)",
+	"retina3x": "(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)",
+);
+
+// -- Mobile menu breakpoint
+$menu-mobile-breakpoint: 768px;
+
+// -- SASS MAPs FOR Z-INDEXs
+$z-index: (
+	modal: 50,
+	navigation: 40,
+	header: 30,
+	commonOver: 20,
+	common: 10,
+	default: 1,
+	below: -1,
+	pit: -9000,
+);
+
+// -- Font family, fonts' folder variables
+// These variables are used in fonts.scss
+$font-root-folder: "../fonts/";
+$primary-font-name: "Poppins";
+$secondary-font-name: "Grotesque";
+$accent-font-name: $primary-font-name;
+$font-fallback: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+$primary-font: $primary-font-name, $font-fallback;
+$secondary-font: $secondary-font-name, $font-fallback;
+$accent-font: $accent-font-name, $font-fallback;
+
+// -- Colors sheme
+$colors-general: (
+	"primary":    #1b76d8,
+	"secondary":  #3dc1e7,
+	"tertiary":   #74cac7,
+	"white":      #fff,
+	"white-lily": #e5f6ff,
+	"black":      #000,
+	"gray":       #808080,
+	"gray-light": #b3b3b3,
+	"gray-gall":  #eaeaea,
+	"blue":       #1b76d8,
+	"blue-alice": #f4fbff,
+	"blue-light": #4992e0,
+	"blue-light2":#51a5e4,
+	"turquoise":  #3dc1e7,
+	"monte-carlo":#74cac7,
+	"aquamarine": #6affd2,
+	"red":        #f31907,
+	"link-water": #ddebf9,
+	"link-water2":#d2e4f7,
+	"denim":      #196bc3,
+	"trop-blue":  #c3e8f7,
+	"perano":     #bbd6f4,
+	"cornflower": #8dbbeb,
+);
+
+// -- Color use
+$colors: colorScheme($colors-general);
+// $bodies: colorScheme($color-body);
+
+// -- Colors theme
+// $color-brand: color('primary', $colors, true);
+$btn-bg-color: color("primary", $colors, true);
+
+// -- Headers
+// name use for media query `<${name}`. See `$breakpoints` variable for a possible key.
+$headers: (
+	"default": (
+		5rem,
+		4.2rem,
+		3.4rem,
+		3rem,
+		2.5rem,
+		2rem,
+	),
+	"tablet": (
+		4.5rem,
+		3.8rem,
+		3rem,
+		2.8rem,
+		2.3rem,
+		2rem,
+	),
+	"sm-phone": (
+		4.3rem,
+		3.5rem,
+		2.9rem,
+		2.8rem,
+		2.3rem,
+		1.8rem,
+	),
+);
+
+// -- Paragraph
+// name use for media query `<${name}`. See `$breakpoints` variable for a possible key.
+// key use for class name. Example 'sm': 14px - create variable `--p-sm: 14px`;
+$paragraph: (
+	"default": (
+		"default": 1.6rem,
+		"sm": 1.4rem,
+		"xs": 1.2rem,
+	),
+	"sm-phone": (
+		"default": 1.2rem,
+		"sm": 1.2rem,
+		"xs": 1.2rem,
+	),
+);
+
+// -- Container
+$gutter: 1.5rem;
+$container: (
+	"default": 1146px,
+	"xs": 814px,
+	"sm": 970px,
+	"md": 1185px,
+	"lg": 1290px,
+	"xl": 1361px,
+);
+
+// -- Grid
+$grid: (
+	"column": 12,
+	"gutter": 21px,
+	"breakpoints": (
+		"xs": "sm-phone",
+		"sm": "phone",
+		"md": "tablet",
+		"lg": "desktop",
+		"xl": "md-desktop",
+		"xxl": "xl",
+	),
+);
+
+// -- Buttons size
+//
+// x - top/bottom padding
+// y - left/right padding
+// b - border
+// r - radius
+// fz - font-size
+//
+$btnsSize: (
+	"default": (
+		"default": (
+			"y": 2.25rem,
+			"x": 3.2rem,
+			"b": 0.1rem,
+			"r": 5.6rem,
+			"fz": 1.6rem,
+		),
+		"sm": (
+			"y": 1.7rem,
+			"x": 2.6rem,
+			"b": 0.1rem,
+			"r": 3.6rem,
+			"fz": 1.2rem,
+		),
+		// if need other size button
+		// 'lg': ('y': 18px, 'x': 35px, 'b': 3px, 'r': 0, 'fz': 22px),,,,,,
+	),
+		"phone": (
+			"default": (
+				"y": 1.6rem,
+				"x": 2.3rem,
+				"b": 0.1rem,
+				"r": 4.4rem,
+				"fz": 1.2rem,
+			),
+			"sm": (
+				"y": 1.6rem,
+				"x": 2.3rem,
+				"b": 0.1rem,
+				"r": 3.3rem,
+				"fz": 1.2rem,
+			),
+		),
+	);
+
+$inputSize: (
+	"default": (
+		"default": (
+			"y": 1.4rem,
+			"x": 2rem,
+			"b": 0.2rem,
+			"r": 0.8rem,
+			"fz": 1.6rem,
+		),
+		// if need other size button
+		// 'lg': ('y': 18px, 'x': 35px, 'b': 3px, 'r': 0, 'fz': 22px),,,,,,
+	),
+		"sm-phone": (
+			"default": (
+				"y": 1.2rem,
+				"x": 1.5rem,
+				"b": 0.2rem,
+				"r": 0.8rem,
+				"fz": 1.2rem,
+			),
+		),
+	);
+
+// -- Input padding left and right
+$input-padding-x: map-get(map-get(map-get($btnsSize, "default"), "default"), "x");

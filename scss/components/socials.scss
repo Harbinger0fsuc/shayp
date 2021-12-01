@@ -1,0 +1,66 @@
+.socials {
+	--gap: 0.5rem;
+	--identation-top: 0.4rem;
+
+	$this: &;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 calc(var(--gap) * -1);
+
+		& > * {
+			padding: 0 var(--gap);
+		}
+	}
+
+	&__item {
+		margin: var(--identation-top) 0;
+	}
+
+	&__link {
+		display: inline-block;
+		transition: transform var(--animation-duration) var(--animation-timing-function);
+
+		&:hover {
+			transform: translateY(-0.3rem);
+		}
+	}
+
+	&__ico {
+		fill: var(--text-color-accent);
+	}
+
+	// Modifiers for the component
+	&--round {
+		#{$this}__link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 4rem;
+			height: 4rem;
+			color: var(--color-white);
+			background: var(--bg-color-primary);
+			border-radius: 50%;
+		}
+
+		#{$this}__ico {
+			fill: currentColor;
+		}
+	}
+
+	&--squarelike {
+		--gap: 0.8rem;
+		--identation-top: 0.7rem;
+
+		#{$this}__link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 5rem;
+			height: 5rem;
+			border-radius: 0.8rem;
+			box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.08);
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.btn-play {
+	&__itself {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 5.6rem;
+		height: 5.6rem;
+		background-color: var(--color-white);
+		border-radius: 50%;
+	}
+
+	&__ico {
+		position: relative;
+		right: -0.2rem;
+	}
+}

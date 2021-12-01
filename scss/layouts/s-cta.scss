@@ -1,0 +1,77 @@
+.s-cta {
+	$this: &;
+
+	&__decor {
+		@include bg-stretch-img;
+
+		z-index: zIndex("default");
+		pointer-events: none;
+	}
+
+	&-decor__item[class] {
+		position: absolute;
+		bottom: 10%;
+		left: 0;
+		height: auto;
+	}
+
+	// Modifiers for the section
+	&--py-common {
+		padding: 7.5rem 0;
+	}
+
+	&--filled {
+		background: linear-gradient(2.06deg, var(--bg-color-primary) -21.49%, var(--bg-color-secondary) 122.58%, var(--bg-color-tertiary) 258.72%);
+	}
+
+	&--secondary {
+		padding: 13.5rem 0 12.7rem;
+
+		.headline {
+			margin-bottom: 7rem;
+		}
+
+		.headline__title {
+			margin-bottom: 1.2rem;
+		}
+
+		.btngroup__list {
+			justify-content: center;
+		}
+	}
+}
+
+@include media("<desktop") {
+	.s-cta {
+		// Modifiers for the section
+		&--py-common {
+			padding: 6rem 0;
+		}
+
+		&--secondary {
+			padding: 10rem 0;
+
+			.headline {
+				margin-bottom: 5rem;
+			}
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-cta {
+		// Modifiers for the section
+		&--software-second,
+		&--software-third {
+			padding: 2.8rem 0;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.s-cta {
+		&-decor__item[class] {
+			bottom: 21%;
+		}
+	}
+}

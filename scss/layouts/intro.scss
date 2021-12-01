@@ -1,0 +1,436 @@
+.intro {
+	$this: &;
+
+	position: relative;
+	padding: 16.7rem 0 var(--intro-pb, 15rem);
+	background: linear-gradient(177.09deg, var(--bg-color-primary) 46.5%, var(--bg-color-secondary) 140.63%, var(--bg-color-tertiary) 229.58%);
+
+	&__inner {
+		position: relative;
+		z-index: zIndex("commonOver");
+		display: flex;
+		align-items: center;
+		margin: 0 -1.5rem;
+
+		& > * {
+			padding: 0 1.5rem;
+		}
+	}
+
+	&__info {
+		@include generalVertSpacing(2rem);
+
+		position: relative;
+		width: var(--intro-info-width, 55%);
+	}
+
+	.headline {
+		margin-bottom: 4rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		p {
+			font-size: var(--p-sm);
+		}
+	}
+
+	.list-descriptive {
+		margin-bottom: 5rem;
+	}
+
+	.btn {
+		&__ico {
+			fill: currentColor;
+		}
+	}
+
+	&__media {
+		position: relative;
+		width: 100%;
+		max-width: var(--intro-media-width, 45%);
+
+		&--content-end {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	&-media__decor {
+		position: absolute;
+		top: var(--intro-media-decor-top, 0);
+		right: var(--intro-media-decor-right, 0);
+
+		&--mobile-visible {
+			display: none;
+		}
+	}
+
+	&-media-decor__item {
+		fill: var(--color-white);
+	}
+
+	&__img {
+		display: flex;
+		width: 100%;
+		max-width: var(--intro-img-width, initial);
+		pointer-events: none;
+
+		img,
+		svg {
+			width: 100%;
+		}
+
+		svg {
+			height: 100%;
+			overflow: initial;
+			fill: none !important;
+		}
+
+		// Modifiers for the element
+		&--overlapped {
+			margin-left: var(--img-overlapped-ml, -5rem);
+		}
+	}
+
+	.bg-common {
+		img {
+			object-position: bottom;
+		}
+	}
+
+	// Modifiers for the section
+	&--decorated {
+		background: none;
+	}
+
+	&--ellipselike {
+		&::before {
+			position: absolute;
+			top: var(--intro-ellipse-top, -30%);
+			right: var(--intro-ellipse-right, -17%);
+			z-index: zIndex("common");
+			width: var(--intro-ellipse-width, 60%);
+			max-width: var(--intro-ellipse-maxwidth, 100rem);
+			aspect-ratio: 1;
+			content: " ";
+			border: 0.2rem dashed var(--intro-ellipse-color, var(--color-cornflower));
+			border-radius: 50%;
+		}
+	}
+
+	&--software {
+		#{$this}__media {
+			margin: -12rem 0 -12rem -15rem;
+		}
+
+		#{$this}__img {
+			img,
+			svg {
+				width: 77rem;
+				max-width: initial;
+			}
+		}
+	}
+}
+
+@include media("<ipad-pro") {
+	.intro {
+		$this: &;
+
+		// Modifiers for the section
+		&--software {
+			#{$this}__img {
+				img,
+				svg {
+					width: 67rem;
+				}
+			}
+		}
+	}
+}
+
+@include media("<md-desktop") {
+	.intro {
+		$this: &;
+
+		// Modifiers for the section
+		&--software {
+			#{$this}__media {
+				margin: 0;
+			}
+
+			#{$this}__img {
+				img,
+				svg {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@include media("<desktop") {
+	.intro {
+		$this: &;
+
+		padding: 14rem 0 13rem;
+
+		&__img {
+			// Modifiers for the element
+			&--overlapped {
+				margin-left: initial;
+			}
+		}
+
+		// Modifiers for the section
+		&--software {
+			#{$this}__media {
+				margin-left: -7rem;
+			}
+
+			#{$this}__img {
+				img,
+				svg {
+					width: 44rem;
+					max-width: initial;
+				}
+			}
+		}
+
+		&--blog {
+			&[class] {
+				padding-bottom: 4rem;
+			}
+		}
+
+		&--ellipselike {
+			&::before {
+				top: -15%;
+				right: -5%;
+				width: 75%;
+			}
+		}
+	}
+}
+
+@include media("<=900px") {
+	.intro {
+		$this: &;
+		// Modifiers for the section
+		&--hardware {
+			#{$this}__info,
+			#{$this}__media {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@include media("<tablet") {
+	.intro {
+		padding: 11.7rem 0 25rem;
+
+		$this: &;
+
+		&__inner {
+			flex-wrap: wrap;
+
+			& > * {
+				margin-bottom: 4rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__info,
+		&__img {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&__media {
+			max-width: 60%;
+			margin-right: auto;
+			margin-left: auto;
+
+			&--content-end {
+				justify-content: stretch;
+			}
+		}
+
+		&-media__decor {
+			&--mobile-visible {
+				display: block;
+			}
+		}
+
+		&__img {
+			&.ml-auto {
+				margin-left: initial !important;
+			}
+		}
+
+		.btngroup {
+			&.ml-auto {
+				margin-left: initial !important;
+			}
+		}
+
+		// Modifiers for the section
+		&--ellipselike {
+			&::before {
+				top: initial;
+				right: -42%;
+				bottom: 7%;
+				width: 110%;
+				border-color: var(--color-white);
+			}
+		}
+
+		&--homepage {
+			padding-bottom: 8rem;
+
+			#{$this}__media {
+				width: 140%;
+				max-width: 140%;
+				margin-left: -9rem;
+			}
+
+			#{$this}-media__decor {
+				top: 21%;
+				z-index: zIndex("below");
+			}
+
+			.bg-common {
+				img {
+					object-position: 78% -22px;
+				}
+			}
+		}
+
+		&--press {
+			.decoration-common__item {
+				&:nth-child(1) {
+					top: 21%;
+					right: 5%;
+					bottom: initial;
+				}
+
+				&:nth-child(2) {
+					right: 2%;
+					bottom: 17%;
+
+					svg {
+						width: 8rem;
+						height: 8rem;
+					}
+				}
+			}
+		}
+
+		&--software {
+			padding-bottom: 2rem;
+
+			&.intro--ellipselike {
+				&::before {
+					bottom: -3%;
+				}
+			}
+
+			#{$this}__media {
+				width: auto;
+				max-width: initial;
+				margin: -7rem -5rem 0;
+			}
+
+			#{$this}__img {
+				img,
+				svg {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+
+		&--hardware {
+			#{$this}__info,
+			#{$this}__media {
+				width: 100%;
+			}
+
+			#{$this}__info {
+				text-align: center;
+			}
+
+			.btngroup__list {
+				justify-content: center;
+			}
+
+			#{$this}__media {
+				margin-bottom: -12rem;
+			}
+
+			.bg-common {
+				img {
+					object-position: 61% bottom;
+				}
+			}
+		}
+
+		&--products,
+		&--contact-us {
+			padding-bottom: 13rem;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.intro {
+		// Modifiers
+		&--software {
+			.bg-common__item {
+				object-fit: initial;
+			}
+		}
+	}
+}
+
+@include media("<sm-phone") {
+	.intro {
+		&__inner {
+			& > * {
+				margin-bottom: 3rem;
+			}
+		}
+
+		.headline {
+			margin-bottom: 3.2rem;
+		}
+
+		.headline__title {
+			margin-bottom: 2rem;
+			font-size: 3.2rem;
+		}
+
+		&__media {
+			max-width: 80%;
+		}
+
+		&__img {
+			max-width: 100%;
+		}
+	}
+}
+
+@include media("<xs-phone") {
+	.intro {
+		&__media {
+			max-width: 100%;
+		}
+	}
+}

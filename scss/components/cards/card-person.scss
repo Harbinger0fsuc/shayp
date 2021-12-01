@@ -1,0 +1,71 @@
+.card-person {
+	&__header {
+		position: relative;
+
+		.socials {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: zIndex("commonOver");
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-end;
+			width: 100%;
+			height: 100%;
+			padding: 1.6rem;
+		}
+	}
+
+	&__img {
+		position: relative;
+		display: block; // just in case <a>
+		overflow: hidden;
+		border-radius: var(--radius-tertiary);
+
+		&::before {
+			display: block;
+			width: 100%;
+			padding-top: 83%;
+			content: " ";
+		}
+
+		img {
+			@include bg-stretch-img($hasImgChild: false);
+
+			filter: grayscale(1);
+		}
+	}
+
+	&__body {
+		padding: 2.4rem 0;
+	}
+
+	&__creds {
+		@include generalVertSpacing(0.3rem);
+
+		margin-bottom: 1.2rem;
+	}
+
+	&__name {
+		color: var(--text-color-accent);
+		text-transform: capitalize;
+	}
+
+	&__pos {
+		color: var(--color-gray);
+	}
+
+	&__desc {
+		@include generalVertSpacing(1.2rem);
+
+		font-size: var(--p-sm);
+	}
+}
+
+@include media("<tablet") {
+	.card-person {
+		&__body {
+			padding: 1.9rem 0;
+		}
+	}
+}

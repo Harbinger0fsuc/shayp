@@ -1,0 +1,11 @@
+.titlegroup {
+	@include generalVertSpacing(1.5rem);
+}
+
+@include media("<tablet") {
+	.titlegroup {
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+}

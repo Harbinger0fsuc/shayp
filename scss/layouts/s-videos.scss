@@ -1,0 +1,35 @@
+.s-videos {
+	padding: 7.5rem 0 6.6rem;
+
+	&__titlegroup {
+		margin-bottom: 7rem;
+	}
+
+	.grid-common__col {
+		margin-bottom: 8.8rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-videos {
+		padding: 6rem 0;
+
+		&__titlegroup {
+			margin-bottom: 4rem;
+		}
+
+		.grid-common__col {
+			margin-bottom: 6rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-videos {
+		padding-bottom: 4rem;
+
+		.grid-common__col {
+			margin-bottom: 4rem;
+		}
+	}
+}

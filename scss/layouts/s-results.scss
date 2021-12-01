@@ -1,0 +1,54 @@
+.s-results {
+	--pb: 15rem;
+
+	position: relative;
+	padding: 9rem 0 var(--pb, 15rem);
+
+	&__titlegroup {
+		margin-bottom: 6rem;
+	}
+
+	&__decoration {
+		position: absolute;
+		right: 0;
+		bottom: var(--pb, 15rem);
+		z-index: zIndex("below");
+		width: 58rem;
+		max-width: 100%;
+		pointer-events: none;
+		user-select: none;
+
+		img,
+		svg {
+			width: 100%;
+		}
+	}
+}
+
+@include media("<desktop") {
+	.s-results {
+		--pb: 10rem;
+
+		padding-top: 7rem;
+
+		&__titlegroup {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-results {
+		&__decoration {
+			display: none;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.s-results {
+		--pb: 7rem;
+
+		padding-top: 6rem;
+	}
+}

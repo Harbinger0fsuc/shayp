@@ -1,0 +1,99 @@
+.block-contact {
+	position: relative;
+	background: linear-gradient(334.04deg, var(--bg-color-primary) -12.5%, var(--bg-color-secondary) 94.52%, var(--bg-color-tertiary) 195.63%);
+	border-radius: var(--radius-common);
+
+	&__inner {
+		padding: 10.4rem 17rem 11rem;
+	}
+
+	.form-primary__title {
+		margin-bottom: 3.5rem;
+	}
+
+	.form-primary__heading {
+		margin-bottom: 5rem;
+
+		& > *:not(.form-primary__title):not(:last-child) {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	textarea {
+		height: 16.8rem;
+	}
+
+	&__decor,
+	&__line {
+		z-index: zIndex("default");
+		pointer-events: none;
+	}
+
+	&__line {
+		@include bg-stretch-img;
+
+		img {
+			position: absolute;
+			top: 7rem;
+			left: 0;
+			height: auto;
+		}
+	}
+
+	&__decor {
+		@include bg-stretch-img($hasImgChild: false);
+	}
+
+	&-decor__item {
+		position: absolute;
+		top: var(--decor-item-top, initial);
+		right: var(--decor-item-right, initial);
+		bottom: var(--decor-item-bottom, initial);
+		left: var(--decor-item-left, initial);
+		opacity: var(--decor-item-opacity);
+		transform: rotate(var(--decor-item-rotate));
+	}
+}
+
+@include media("<=desktop") {
+	.block-contact {
+		&__inner {
+			padding: 6.4rem 7rem 8rem;
+		}
+	}
+}
+
+@include media("<=tablet") {
+	.block-contact {
+		.form-primary__pillar {
+			flex-basis: 100%;
+			width: 100%;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.block-contact {
+		border-radius: 2.5rem;
+
+		&-decor__item {
+			opacity: 0.4;
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.block-contact {
+		&__inner {
+			padding: 4.4rem 4rem 5rem;
+		}
+	}
+}
+
+@include media("<=xs-phone") {
+	.block-contact {
+		&__inner {
+			padding: 3rem 3rem 4rem;
+		}
+	}
+}

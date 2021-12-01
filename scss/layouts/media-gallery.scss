@@ -1,0 +1,23 @@
+.media-gallery {
+	padding: 7.5rem 0;
+
+	&__titlegroup {
+		margin-bottom: 4.5rem;
+	}
+
+	.grid-masonry {
+		margin-bottom: 2.6rem;
+	}
+}
+
+@include media("<desktop") {
+	.media-gallery {
+		padding: 6rem 0;
+	}
+}
+
+@include media("<tablet") {
+	.media-gallery {
+		padding: 5rem 0;
+	}
+}

@@ -1,0 +1,50 @@
+.s-careers {
+	padding: 7rem 0 12rem;
+
+	&__intro {
+		@include generalVertSpacing(3rem);
+
+		margin-bottom: 5.5rem;
+	}
+
+	&__titlegroup {
+		margin-bottom: 4.8rem;
+	}
+
+	.pills-list {
+		margin-bottom: 4rem;
+	}
+
+	.grid-common__col {
+		flex-basis: 50%;
+		width: 50%;
+		margin-bottom: 3rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-careers {
+		padding: 6rem 0 10rem;
+
+		&__intro {
+			margin-bottom: 3.5rem;
+
+			& > * {
+				margin-bottom: 1.5rem;
+			}
+		}
+
+		&__titlegroup {
+			margin-bottom: 2.5rem;
+		}
+	}
+}
+
+@include media("<850px") {
+	.s-careers {
+		.grid-common__col {
+			flex-basis: 100%;
+			width: 100%;
+		}
+	}
+}

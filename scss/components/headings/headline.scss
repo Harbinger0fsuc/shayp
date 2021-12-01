@@ -1,0 +1,66 @@
+.headline {
+	$this: &;
+
+	display: flex;
+	flex-direction: column;
+
+	& > * {
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	& > a {
+		display: inline-block;
+	}
+
+	&__suptitle {
+		margin-bottom: 1rem;
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: var(--color-aquamarine);
+	}
+
+	&__title {
+		margin-bottom: 3.2rem;
+
+		&--accent {
+			color: var(--text-color-accent);
+		}
+	}
+
+	p {
+		a {
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+		}
+	}
+}
+
+@include media('<=desktop') {
+	.headline {
+		br { display: none; } // In case one applies to <br> to wrap lines
+	}
+}
+
+@include media("<tablet") {
+	.headline {
+		&__suptitle {
+			font-size: 1.3rem;
+		}
+
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.headline {
+		&__suptitle {
+			font-size: 1rem;
+		}
+	}
+}

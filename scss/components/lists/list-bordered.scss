@@ -1,0 +1,108 @@
+.list-bordered {
+	$this: &;
+
+	&__item {
+		display: flex;
+		padding: 4.8rem 0;
+		border-bottom: 0.1rem solid var(--color-link-water);
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		& > * {
+			margin-right: 1.9rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__content {
+		@include generalVertSpacing(1.5rem);
+
+		position: relative;
+		padding-left: 9.2rem;
+
+		p {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__ico {
+		position: absolute;
+		top: -1rem;
+		left: 0;
+	}
+
+	&__interaction {
+		flex: 0 0 26.4rem;
+	}
+
+	// Modifiers for the component
+	&--no-icon {
+		#{$this}__content {
+			padding-left: 0;
+		}
+	}
+
+	&--content-sm {
+		#{$this}__content {
+			font-size: var(--p-sm);
+		}
+	}
+}
+
+@include media("<desktop") {
+	.list-bordered {
+		&__item {
+			padding: 3rem 0;
+		}
+
+		&__content {
+			padding-left: 8rem;
+		}
+
+		&__ico {
+			top: 0;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.list-bordered {
+		&__item {
+			flex-direction: column;
+
+			& > * {
+				flex-basis: 100%;
+				margin-right: 0;
+				margin-bottom: 2rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@include media("<phone") {
+	.list-bordered {
+		&__content {
+			font-size: 1.4rem;
+		}
+
+		&__ico {
+			top: 1.5rem;
+		}
+	}
+}

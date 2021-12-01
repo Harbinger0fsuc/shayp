@@ -1,0 +1,102 @@
+.s-brief {
+	padding: 8rem 0;
+
+	// Modifiers for the section
+	&--homepage {
+		padding: 12.5rem 0 17rem;
+	}
+
+	&--insights {
+		padding: 14rem 0 8rem;
+	}
+
+	&--maintenance {
+		padding: 8rem 0 14rem;
+	}
+
+	&--product {
+		.two-tiles {
+			.headline {
+				margin-bottom: 3rem;
+			}
+		}
+	}
+
+	// Modifiers for the section
+	&--application {
+		.two-tiles__decoration {
+			top: 20%;
+			transform: translateY(0);
+		}
+	}
+}
+
+@include media("<=md-desktop") {
+	.s-brief {
+		&.section-bordered {
+			.two-tiles__content {
+				padding: 0 2.8rem;
+			}
+		}
+	}
+}
+
+@include media("<desktop") {
+	.s-brief {
+		padding: 7rem 0;
+
+		// Modifiers for the section
+		&--homepage {
+			padding: 7rem 0;
+		}
+
+		&.section-bordered {
+			padding-top: 3.6rem;
+			padding-bottom: 3.6rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-brief {
+		// Modifiers for the section
+		&--homepage {
+			padding: 3rem 0;
+		}
+
+		&--maintenance,
+		&--insights {
+			padding: 3.6rem 0;
+		}
+
+		&--product {
+			padding: 3rem 0;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.s-brief {
+		// Modifiers for the section
+		&.section-bordered {
+			.two-tiles {
+				&--mobile-vrt-reversed {
+					.two-tiles__decoration {
+						bottom: -40%;
+					}
+
+					.two-tiles__img {
+						margin-bottom: -5rem;
+					}
+				}
+			}
+		}
+
+		&--application {
+			.two-tiles__decoration {
+				top: 27%;
+				transform: translateY(-27%);
+			}
+		}
+	}
+}

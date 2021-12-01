@@ -1,0 +1,15 @@
+.s-partner {
+	padding: 2rem 0 15rem;
+}
+
+@include media("<desktop") {
+	.s-partner {
+		padding-bottom: 10rem;
+	}
+}
+
+@include media("<tablet") {
+	.s-partner {
+		padding-bottom: 8rem;
+	}
+}

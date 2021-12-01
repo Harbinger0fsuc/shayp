@@ -1,0 +1,82 @@
+@use "sass:math";
+
+.grid-common {
+	$this: &;
+
+	--gap: 1.5rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 calc(var(--gap, 1.5rem) * -1);
+
+	&__col {
+		flex: 0 1 percentage(math.div(1, 3));
+		width: percentage(math.div(1, 3));
+		padding: 0 var(--gap, 1.5rem);
+		margin-bottom: 3rem;
+	}
+
+	&__item {
+		height: 100%;
+	}
+
+	// Modifiers for the component
+	&--equal-row-height {
+		display: grid;
+		flex-wrap: initial;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: 1fr;
+
+		#{$this}__col {
+			flex: initial;
+			width: initial;
+			margin-bottom: 3rem;
+		}
+	}
+
+	&--two-columns {
+		#{$this}__col {
+			flex-basis: 50%;
+			width: 50%;
+		}
+	}
+}
+
+@include media("<desktop") {
+	.grid-common {
+		$this: &;
+
+		&__col {
+			flex-basis: percentage(math.div(1, 2));
+			width: percentage(math.div(1, 2));
+		}
+
+		// Modifiers for the component
+		&--equal-row-height {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+@include media("<=phone") {
+	.grid-common {
+		$this: &;
+
+		&__col {
+			flex-basis: 100%;
+			width: 100%;
+		}
+
+		// Modifiers for the component
+		&--equal-row-height {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		&--two-columns {
+			#{$this}__col {
+				flex-basis: 100%;
+				width: 100%;
+			}
+		}
+	}
+}

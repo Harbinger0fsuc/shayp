@@ -1,0 +1,33 @@
+.team {
+	padding: 5.5rem 0 9rem;
+
+	&__titlegroup {
+		margin-bottom: 6rem;
+	}
+
+	.grid-common__col {
+		margin-bottom: 6rem;
+	}
+}
+
+@include media("<desktop") {
+	.team {
+		padding-top: 4.5rem;
+
+		&__titlegroup {
+			margin-bottom: 4rem;
+		}
+
+		.grid-common__col {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.team {
+		.grid-common__col {
+			margin-bottom: 3rem;
+		}
+	}
+}

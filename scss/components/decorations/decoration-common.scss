@@ -1,0 +1,16 @@
+.decoration-common {
+	@include bg-stretch-img;
+
+	z-index: zIndex("below");
+	pointer-events: none;
+
+	&__item {
+		position: absolute;
+		top: var(--decor-item-top, initial);
+		right: var(--decor-item-right, initial);
+		bottom: var(--decor-item-bottom, initial);
+		left: var(--decor-item-left, initial);
+		opacity: var(--decor-item-opacity, 1);
+		transform: rotate(var(--decor-item-rotate, 0));
+	}
+}

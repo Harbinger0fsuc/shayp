@@ -1,0 +1,192 @@
+.single-post {
+	padding: 5.5rem 0 15rem;
+
+	&__featured {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 3.2rem;
+	}
+
+	&-featured__img {
+		&--prev,
+		&--next {
+			overflow: hidden;
+			opacity: 0.3;
+		}
+
+		&--prev {
+			border-radius: 0 1.6rem 1.6rem 0;
+		}
+
+		&--next {
+			border-radius: 1.6rem 0 0 1.6rem;
+		}
+
+		&--centered {
+			margin: 0 16.6rem;
+		}
+
+		img {
+			width: 81.4rem;
+			max-width: initial;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 -1rem 4.4rem;
+
+		& > * {
+			padding: 0 1rem;
+		}
+	}
+
+	&__date {
+		font-size: 1rem;
+		font-weight: 300;
+	}
+
+	&__body {
+		& > * {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@include media(">=2400px") {
+	.single-post {
+		&-featured__img {
+			&--prev,
+			&--next {
+				border-radius: 1.6rem;
+			}
+		}
+	}
+}
+
+@include media("<ipad-pro") {
+	.single-post {
+		&-featured__img {
+			&--centered {
+				margin: 0 8rem;
+			}
+
+			img {
+				width: 60rem;
+			}
+		}
+	}
+}
+
+@include media("<md-desktop") {
+	.single-post {
+		.container {
+			&--xs {
+				max-width: 70rem;
+			}
+		}
+	}
+}
+
+@include media("<desktop") {
+	.single-post {
+		padding-bottom: 10rem;
+
+		&-featured__img {
+			&--centered {
+				margin: 0 5rem;
+			}
+
+			img {
+				width: 45rem;
+			}
+		}
+
+		&__heading {
+			margin-bottom: 3rem;
+		}
+
+		.container {
+			&--xs {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+@include media("<tablet") {
+	.single-post {
+		padding-bottom: 8rem;
+
+		&-featured__img {
+			&--centered {
+				margin: 0 5rem;
+			}
+
+			img {
+				width: 45rem;
+			}
+		}
+	}
+}
+
+@include media("<=phone") {
+	.single-post {
+		&-featured {
+			position: relative;
+		}
+
+		&-featured__img {
+			&--prev,
+			&--next {
+				position: absolute;
+				top: 0;
+				height: 100%;
+			}
+
+			&--prev {
+				right: 90%;
+			}
+
+			&--centered {
+				margin: 0 15%;
+
+				img {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+
+			&--next {
+				left: 90%;
+			}
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.single-post {
+		&__heading {
+			flex-direction: column;
+			align-items: stretch;
+
+			& > * {
+				margin-bottom: 2rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.pills-list {
+			margin-bottom: 2.5rem;
+		}
+	}
+}

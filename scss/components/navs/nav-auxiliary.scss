@@ -1,0 +1,24 @@
+.nav-auxiliary {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -1.6rem;
+
+		& > * {
+			padding: 0 1.6rem;
+		}
+	}
+
+	&__item {
+		margin: 0.4rem 0;
+	}
+
+	&__link {
+		font-size: 1rem;
+		font-weight: 300;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

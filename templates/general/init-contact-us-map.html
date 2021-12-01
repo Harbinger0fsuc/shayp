@@ -1,0 +1,31 @@
+<!-- .Script to initialize api -->
+<script>
+	const mapToInit = document.getElementById("map");
+
+	function initMap() {
+	// Coordinates/location
+	const coordinates = { lat: 37.76251577793364, lng: -122.42191094716848 };
+
+	// Init map itself
+	const mapInitialization = new google.maps.Map(mapToInit, {
+		zoom: 12,
+		center: coordinates,
+		disableDefaultUI: true,
+		mapTypeControl: false,
+	});
+
+	// Markers
+	const marker = new google.maps.Marker({
+		position: coordinates,
+		map: mapInitialization,
+		icon: "./assets/media/icons/different/ico-map-marker.svg"
+	});
+}
+</script>
+<!-- ./Script to initialize api -->
+
+<!-- .script to load api -->
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgLSdtav-jTF02vTt8vfxrF8L7JuLWU84&callback=initMap">
+</script>
+<!-- ./script to load api -->

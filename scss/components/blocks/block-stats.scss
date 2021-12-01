@@ -1,0 +1,97 @@
+@use "sass:math";
+
+.block-stats {
+	background-image: linear-gradient(var(--color-white), var(--color-white)), radial-gradient(circle at top left, var(--bg-color-secondary), var(--bg-color-tertiary));
+	background-clip: content-box, border-box;
+	background-origin: border-box;
+	border: 0.4rem solid transparent;
+	border-radius: var(--radius-common);
+
+	&__inner {
+		padding: 5.5rem 7rem 3rem;
+	}
+
+	&__heading {
+		@include generalVertSpacing(1.4rem);
+
+		margin-bottom: 3.5rem;
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -1.5rem;
+	}
+
+	&__item {
+		@include generalVertSpacing(1.2rem);
+
+		display: flex;
+		flex: 0 1 percentage(math.div(1, 3));
+		flex-direction: column;
+		width: percentage(math.div(1, 3));
+		padding: 0 1.5rem;
+		margin-bottom: 2.5rem;
+		text-align: center;
+	}
+
+	&__text,
+	&__nums {
+		display: block;
+		color: var(--text-color-accent);
+	}
+
+	&__nums {
+		font-size: 3.4rem;
+		font-weight: 600;
+		line-height: 1.18;
+	}
+
+	// Modifiers for the component
+	&--filled {
+		background-image: linear-gradient(338.15deg, var(--bg-color-primary) -96.5%, var(--bg-color-tertiary) -6.42%, var(--bg-color-secondary) 78.7%);
+		background-clip: initial;
+		background-origin: initial;
+		border: none;
+
+		& * {
+			color: var(--color-white);
+		}
+	}
+}
+
+@include media("<desktop") {
+	.block-stats {
+		&__inner {
+			padding: 5.5rem 4.1rem 2rem;
+		}
+
+		&__nums {
+			font-size: 3.2rem;
+		}
+	}
+}
+
+@include media("<850px") {
+	.block-stats {
+		&__item {
+			flex-basis: 50%;
+			width: 50%;
+			margin-bottom: 4rem;
+
+			& > * {
+				margin-bottom: 0.9rem;
+			}
+		}
+	}
+}
+
+@include media("<550px") {
+	.block-stats {
+		&__item {
+			flex-basis: 100%;
+			width: 100%;
+			margin-bottom: 3rem;
+		}
+	}
+}

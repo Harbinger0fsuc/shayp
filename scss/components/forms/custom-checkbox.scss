@@ -1,0 +1,64 @@
+.custom-checkbox {
+	$this: &;
+
+	&__itself {
+		&:checked + #{$this}__label::before {
+			background-color: var(--color-white);
+		}
+
+		&:checked + #{$this}__label::after {
+			// filter: invert(1);
+			opacity: 1;
+		}
+	}
+
+	&__label {
+		position: relative;
+		display: flex;
+		padding-left: 3.6rem;
+		font-size: var(--p-sm);
+		color: var(--text-color-primary);
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			position: absolute;
+			z-index: zIndex("common");
+			display: block;
+			cursor: pointer;
+			content: " ";
+		}
+
+		&::before {
+			top: 0.18em;
+			left: 0;
+			width: 2.4rem;
+			height: 2.4rem;
+			background-color: var(--color-black);
+			border: 0.1rem solid var(--color-black);
+			border-radius: 0.6rem;
+		}
+
+		&::after {
+			top: 0.75em;
+			left: 0.55em;
+			z-index: zIndex("common") + 1;
+			width: 1rem;
+			height: 0.7rem;
+			background: center/cover no-repeat url("../media/icons/different/ico-tick.svg");
+			opacity: 0;
+		}
+	}
+
+	// Modifiers for the component
+	&--inverted {
+		#{$this}__label {
+			color: var(--color-white);
+
+			&::before {
+				background-color: transparent;
+				border-color: var(--color-white);
+			}
+		}
+	}
+}

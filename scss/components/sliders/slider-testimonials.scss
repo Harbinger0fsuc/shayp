@@ -1,0 +1,58 @@
+.slider-testimonials {
+	--indentation: 5rem;
+
+	padding: var(--indentation) 0 0 var(--indentation);
+	margin: calc(var(--indentation) * -1) 0 0 calc(var(--indentation) * -1);
+
+	.swiper-slide {
+		&__inner {
+			display: flex;
+
+			& > * {
+				flex: 1 1 50%;
+				margin-right: 3rem;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	.swiper-pagination {
+		padding-bottom: 1rem;
+		margin-top: 5.6rem;
+	}
+
+	// Modifiers for the component
+	&--faded {
+		padding: var(--indentation);
+		margin: calc(var(--indentation) * -1);
+	}
+}
+
+@include media("<desktop") {
+	.slider-testimonials {
+		padding: var(--indentation);
+		margin: calc(var(--indentation) * -1);
+
+		.swiper-slide {
+			&__inner {
+				flex-wrap: wrap;
+
+				& > * {
+					margin-right: initial;
+					margin-bottom: 4rem;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		.swiper-pagination {
+			margin-top: 4rem;
+		}
+	}
+}

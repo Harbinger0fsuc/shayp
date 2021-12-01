@@ -1,0 +1,7 @@
+.scale-on-hover {
+	transition: transform var(--animation-duration) var(--animation-timing-function);
+
+	&:hover {
+		transform: scale(1.02);
+	}
+}

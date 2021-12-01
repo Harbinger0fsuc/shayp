@@ -1,0 +1,50 @@
+.s-steps {
+	padding: 7.5rem 0 10rem;
+	background: linear-gradient(177.09deg, var(--bg-color-primary) -38.24%, var(--bg-color-secondary) 25.23%, var(--bg-color-tertiary) 85.2%);
+
+	&__titlegroup {
+		margin-bottom: 5.5rem;
+	}
+
+	.cards-steps {
+		margin-bottom: 5rem;
+	}
+
+	.bg-common__item {
+		object-fit: initial;
+	}
+}
+
+@include media("<desktop") {
+	.s-steps {
+		.bg-common__item {
+			object-fit: cover;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-steps {
+		padding: 6.4rem 0 8.4rem;
+
+		&__titlegroup {
+			margin-bottom: 3.5rem;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.s-steps {
+		.bg-common__item {
+			object-fit: initial;
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.s-steps {
+		.cards-steps {
+			margin-bottom: 3.5rem;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.card-secondary {
+	background-image: linear-gradient(var(--color-white), var(--color-white)), radial-gradient(circle at top left, var(--bg-color-secondary), var(--bg-color-tertiary));
+	background-clip: content-box, border-box;
+	background-origin: border-box;
+	border: 0.2rem solid transparent;
+	border-radius: var(--radius-secondary);
+
+	&__inner {
+		@include generalVertSpacing(1.6rem);
+
+		padding: 3.2rem;
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 4.8rem;
+		height: 4.8rem;
+		margin-bottom: 3.2rem;
+		background: linear-gradient(209.74deg, var(--bg-color-primary) -51.9%, var(--bg-color-secondary) 54.59%, var(--bg-color-tertiary) 155.22%);
+		border-radius: 50%;
+
+		svg {
+			fill: var(--color-white);
+		}
+	}
+
+	&__content {
+		@include generalVertSpacing(1rem);
+	}
+}
+
+@include media("<=sm-phone") {
+	.card-secondary {
+		&__inner {
+			padding: 2rem;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.bg-common {
+	@include bg-stretch-img;
+
+	z-index: zIndex("below");
+	pointer-events: none;
+
+	&__item {
+		&--mobile-visible[class] {
+			display: none;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.bg-common {
+		&__item {
+			&--mobile-visible[class] {
+				display: block;
+			}
+
+			&--mobile-hidden[class] {
+				display: none;
+			}
+		}
+	}
+}

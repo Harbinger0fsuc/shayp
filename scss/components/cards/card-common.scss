@@ -1,0 +1,85 @@
+.card-common {
+	$this: &;
+
+	& > * {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		min-height: 8.7rem;
+		margin-bottom: 2.4rem;
+	}
+
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	&__content {
+		@include generalVertSpacing(1rem);
+
+		margin-bottom: 2.4rem;
+	}
+
+	// Modifiers for the component
+	&--content-centered {
+		text-align: center;
+
+		#{$this}__icon {
+			justify-content: center;
+		}
+	}
+
+	&--sm {
+		#{$this}__icon {
+			min-height: 4.8rem;
+		}
+
+		#{$this}__title {
+			font-size: 1.6rem;
+		}
+	}
+
+	&--centered {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&--accent {
+		#{$this}__title {
+			color: var(--text-color-accent);
+		}
+	}
+}
+
+@include media("<desktop") {
+	.card-common {
+		&__icon {
+			min-height: 6.7rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.card-common {
+		text-align: center;
+
+		&__icon {
+			display: flex;
+			justify-content: center;
+		}
+
+		&__title {
+			font-size: 1.8rem;
+
+			br {
+				display: none;
+			}
+		}
+	}
+}

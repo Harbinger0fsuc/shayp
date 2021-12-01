@@ -1,0 +1,122 @@
+.card-testimonials-expanded {
+	@include generalVertSpacing(2.4rem);
+
+	&__quote {
+		position: relative;
+		padding: 4rem 4rem 2.4rem;
+		margin: 0 0 1.2rem;
+		background-color: var(--color-link-water);
+		border-radius: var(--radius-tertiary);
+	}
+
+	.card-test-expanded-quote__ico {
+		position: absolute;
+		top: 4rem;
+		left: -1.2rem;
+		fill: var(--text-color-accent);
+	}
+
+	.card-test-expanded-quote__text {
+		@include generalVertSpacing(1.2rem);
+
+		padding: 0;
+		margin: 0 0 1.2rem;
+		font-size: var(--p-sm);
+		color: var(--text-color-accent);
+		quotes: "“" "”";
+		border: none;
+	}
+
+	.card-test-expanded-quote__creds {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 -1rem;
+
+		& > * {
+			padding: 0 1rem;
+		}
+	}
+
+	.card-test-expanded-quote__logo {
+		display: flex;
+
+		img {
+			width: auto;
+			max-width: 14rem;
+			mix-blend-mode: multiply;
+			object-fit: contain;
+		}
+	}
+
+	.card-test-expanded-quote__authorinfo,
+	.card-test-expanded-quote__pos {
+		line-height: 1.2;
+	}
+
+	.card-test-expanded-quote__authorinfo {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		& > * {
+			margin-bottom: 0.5rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.card-test-expanded-quote__name {
+		font-style: normal;
+		font-weight: 600;
+		color: var(--text-color-accent);
+		text-transform: capitalize;
+	}
+
+	.card-test-expanded-quote__pos {
+		color: var(--color-gray);
+	}
+
+	&__info {
+		@include generalVertSpacing(1.2rem);
+	}
+}
+
+@include media("<=desktop") {
+	.card-testimonials-expanded {
+		.card-test-expanded-quote__ico {
+			display: none;
+		}
+	}
+}
+
+@include media("<desktop") {
+	.card-testimonials-expanded {
+		&__quote {
+			padding: 2.5rem 2rem;
+		}
+	}
+}
+
+@include media("<=440px") {
+	.card-testimonials-expanded {
+		.card-test-expanded-quote__creds,
+		.card-test-expanded-quote__authorinfo {
+			align-items: stretch;
+		}
+
+		.card-test-expanded-quote__creds {
+			flex-direction: column;
+
+			& > * {
+				margin-bottom: 1rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

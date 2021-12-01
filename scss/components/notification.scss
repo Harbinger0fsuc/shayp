@@ -1,0 +1,36 @@
+.notification {
+	--notif-bg-color: var(--bg-color-primary);
+
+	position: relative;
+	z-index: zIndex("default");
+	padding: 2.4rem;
+	background-color: var(--notif-bg-color);
+	border-radius: 1rem;
+
+	&::after {
+		position: absolute;
+		top: 20%;
+		left: calc(100% - 0.15rem);
+		z-index: zIndex("below");
+		width: 2.4rem;
+		height: 2.4rem;
+		clip-path: polygon(0 0, 100% 100%, 0 100%);
+		content: " ";
+		background-color: var(--notif-bg-color);
+		border-radius: 0.5rem;
+		transform: translateX(-50%) rotate(-135deg);
+	}
+
+	&__content {
+		@include generalVertSpacing(2rem);
+
+		font-size: var(--p-xs);
+		color: var(--color-white);
+
+		a {
+			font-weight: 700;
+			color: currentColor;
+			text-decoration: underline;
+		}
+	}
+}

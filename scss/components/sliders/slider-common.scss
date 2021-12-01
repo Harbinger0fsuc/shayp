@@ -1,0 +1,6 @@
+.slider-common {
+	--identation: 1.5rem;
+
+	padding: 0 var(--identation) 1.5rem;
+	margin: 0 calc(var(--identation) * -1);
+}

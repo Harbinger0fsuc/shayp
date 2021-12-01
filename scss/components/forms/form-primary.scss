@@ -1,0 +1,129 @@
+.form-primary {
+	--gap: 1.5rem;
+
+	$this: &;
+
+	&__heading {
+		@include generalVertSpacing(1.5rem);
+
+		margin-bottom: 4rem;
+	}
+
+	form {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__wrapper {
+		margin-bottom: 3.2rem;
+	}
+
+	&__pillar {
+		flex: 1 1 50%;
+		width: 50%;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: calc(var(--gap) * -1);
+		margin-left: calc(var(--gap) * -1);
+
+		& > * {
+			padding-right: var(--gap);
+			padding-left: var(--gap);
+		}
+
+		&--desktop-hidden {
+			display: none;
+		}
+	}
+
+	&__col {
+		flex: 1 1 100%;
+		margin-bottom: 1.6rem;
+
+		&--half {
+			flex-basis: 50%;
+		}
+	}
+
+	&__labelgroup {
+		display: flex;
+		margin: 0 -1rem;
+
+		& > * {
+			width: 50%;
+			padding: 0 1rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	.form-labelgroup__label {
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+
+	.form-interaction__btngroup {
+		.btn {
+			min-width: 19rem;
+		}
+	}
+
+	&__confirmation {
+		padding-top: 2rem;
+		margin-bottom: 5rem;
+	}
+
+	button[type="submit"] {
+		&.btn-block {
+			display: flex;
+		}
+	}
+
+	// Modifiers for the component
+	&--two-columns {
+		#{$this}__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			margin-right: calc(var(--gap) * -1);
+			margin-left: calc(var(--gap) * -1);
+
+			& > * {
+				padding-right: var(--gap);
+				padding-left: var(--gap);
+			}
+		}
+	}
+}
+
+@include media("<=tablet") {
+	.form-primary {
+		&__row {
+			&--desktop-visible {
+				display: none;
+			}
+
+			&--desktop-hidden {
+				display: flex;
+			}
+		}
+	}
+}
+
+@include media("<=phone") {
+	.form-primary {
+		&__pillar {
+			flex-basis: 100%;
+			width: 100%;
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.form-primary {
+		&__title {
+			font-size: 2.8rem;
+		}
+	}
+}

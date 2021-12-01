@@ -1,0 +1,28 @@
+.divider {
+	padding: 4rem 0;
+
+	&__img {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.divider {
+		$this: &;
+
+		padding: 1.5rem 0;
+
+		// Modifiers for the section
+		&--products {
+			#{$this}__img {
+				img {
+					height: 11.6rem;
+					object-fit: cover;
+					object-position: 80% bottom;
+				}
+			}
+		}
+	}
+}

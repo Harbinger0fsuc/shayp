@@ -1,0 +1,27 @@
+.s-blog {
+	padding: 4.8rem 0 14rem;
+
+	&__pills-list[class] {
+		margin-bottom: 4rem;
+	}
+
+	.grid-common {
+		margin-bottom: 3.4rem;
+	}
+
+	.grid-common__col {
+		margin-bottom: 3rem;
+	}
+
+	.pagination {
+		justify-content: flex-end;
+	}
+}
+
+@include media("<tablet") {
+	.s-blog {
+		.pagination {
+			justify-content: center;
+		}
+	}
+}

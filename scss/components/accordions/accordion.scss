@@ -1,0 +1,146 @@
+.accordion {
+	$this: &;
+
+	&__item {
+		margin-bottom: 1.2rem;
+		background-color: var(--color-white);
+		border-radius: 1rem;
+		box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.1);
+		transition: all var(--animation-duration) var(--animation-timing-function);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.is-active {
+			#{$this}__token {
+				&::before {
+					transform: translateY(-50%) rotate(45deg);
+				}
+
+				&::after {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+			}
+		}
+	}
+
+	&__header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		min-height: 8rem;
+		padding: 1.3rem 4rem 1.7rem 5.8rem;
+		text-align: left;
+
+		&:hover {
+			color: currentColor;
+		}
+	}
+
+	&__cat,
+	&__date {
+		font-size: 1.2rem;
+		color: var(--color-gray);
+		text-transform: capitalize;
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__token {
+		position: absolute;
+		top: 50%;
+		left: 2.4rem;
+		display: flex;
+		width: 1.8rem;
+		height: 1.8rem;
+		transition: transform var(--animation-duration) var(--animation-timing-function);
+		transform: translateY(-50%);
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: 50%;
+			display: block;
+			content: " ";
+			background: var(--bg-color-primary);
+			border-radius: 0.5rem;
+			transition: transform var(--animation-duration) var(--animation-timing-function);
+		}
+
+		&::before {
+			width: 100%;
+			height: 0.2rem;
+			transform: translateY(-50%);
+		}
+
+		&::after {
+			left: 50%;
+			width: 0.2rem;
+			height: 100%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__body {
+		max-height: 0;
+		overflow: hidden;
+		transition: all var(--animation-duration) var(--animation-timing-function);
+	}
+
+	&__content {
+		padding: 0.5rem 3.2rem 4rem 5.8rem;
+
+		& > * {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		p {
+			font-size: var(--p-sm);
+
+			a {
+				font-weight: 500;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+@include media("<desktop") {
+	.accordion {
+		&__header {
+			min-height: 6.8rem;
+			padding: 1.3rem 2.4rem 1.3rem 5.8rem;
+		}
+
+		&__title {
+			font-size: 1.6rem;
+		}
+
+		&__content {
+			padding: 0.5rem 2.4rem 2.4rem 5.8rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.accordion {
+		&__title {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.accordion {
+		&__title {
+			font-size: 1.2rem;
+		}
+	}
+}

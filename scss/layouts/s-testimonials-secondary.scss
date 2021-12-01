@@ -1,0 +1,25 @@
+.s-testimonials-secondary {
+	padding: 7.2rem 0 9.4rem;
+
+	.grid-common__col {
+		flex: 0 1 50%;
+		width: 50%;
+		margin-bottom: 5.6rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-testimonials-secondary {
+		padding: 6rem 0 7rem;
+	}
+}
+
+@include media("<=880px") {
+	.s-testimonials-secondary {
+		.grid-common__col {
+			flex-basis: 100%;
+			width: 100%;
+			margin-bottom: 3.5rem;
+		}
+	}
+}

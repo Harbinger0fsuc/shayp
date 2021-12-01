@@ -1,0 +1,18 @@
+.s-press {
+	padding: 4.3rem 0 7.5rem;
+
+	&__titlegroup {
+		margin-bottom: 4.8rem;
+	}
+
+	.swiper-pagination {
+		justify-content: center;
+		margin-top: 5rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-press {
+		padding-bottom: 6rem;
+	}
+}

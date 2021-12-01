@@ -1,0 +1,78 @@
+.card-events {
+	$this: &;
+
+	--content-mb: 2.5rem;
+
+	padding: 2.4rem 4rem 2.4rem 2.4rem;
+	background: var(--color-white);
+	border-radius: var(--radius-tertiary);
+	box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.1);
+
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 1.5rem;
+	}
+
+	&__date {
+		margin-right: 2.4rem;
+		font-size: 1.2rem;
+		color: var(--color-gray);
+	}
+
+	&__title {
+		margin-bottom: 1.4rem;
+		color: var(--text-color-accent);
+	}
+
+	&__body {
+		margin-bottom: 0.5rem;
+	}
+
+	&__content {
+		@include generalVertSpacing(var(--content-mb));
+
+		// Modifiers for the block
+		&.is-active {
+			& > * {
+				&:last-child {
+					margin-bottom: var(--content-mb);
+				}
+			}
+		}
+	}
+
+	&-content__default,
+	&-content__rest {
+		@include generalVertSpacing(var(--content-mb));
+	}
+
+	&-content__default {
+		.dots {
+			& + span {
+				display: none;
+			}
+
+			&[style="display: none;"] {
+				& + span {
+					display: initial;
+				}
+			}
+		}
+	}
+
+	&-content__rest {
+		max-height: 0;
+		overflow: hidden;
+		transition: all var(--animation-duration) var(--animation-timing-function);
+	}
+}
+
+@include media("<=desktop") {
+	.card-events {
+		--content-mb: 1.5rem;
+
+		padding: 2rem;
+	}
+}

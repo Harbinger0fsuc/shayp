@@ -1,0 +1,13 @@
+.benefits {
+	padding: 9rem 0 5.5rem;
+
+	.grid-common__col {
+		margin-bottom: 4rem;
+	}
+}
+
+@include media("<desktop") {
+	.benefits {
+		padding: 7rem 0 5rem;
+	}
+}

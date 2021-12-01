@@ -1,0 +1,57 @@
+.s-solution {
+	padding: 12.5rem 0 16rem;
+
+	&__items {
+		display: flex;
+	}
+
+	&__item {
+		&--sm {
+			width: 100%;
+			max-width: 29.2rem;
+			margin-right: 7rem;
+		}
+	}
+}
+
+@include media("<desktop") {
+	.s-solution {
+		padding: 10rem 0 12rem;
+
+		&__item {
+			&--sm {
+				margin-right: 3rem;
+			}
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-solution {
+		padding: 8rem 0 10rem;
+
+		&__items {
+			flex-wrap: wrap;
+
+			& > * {
+				margin-bottom: 4rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__item {
+			&--sm,
+			&--lg {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+
+			&--sm {
+				margin-right: 0;
+			}
+		}
+	}
+}

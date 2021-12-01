@@ -1,0 +1,36 @@
+.s-logos {
+	&__titlegroup {
+		margin-bottom: 3rem;
+	}
+
+	// Modifiers for the section
+	&--homepage {
+		padding: 10.4rem 0 3.1rem;
+	}
+
+	&--software {
+		padding: 7.5rem 0 12rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-logos {
+		// Modifiers for the section
+		&--software {
+			padding: 6rem 0 8rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.s-logos {
+		// Modifiers for the section
+		&--homepage {
+			padding-top: 3rem;
+		}
+
+		&--software {
+			padding: 2.8rem 0 5.6rem;
+		}
+	}
+}

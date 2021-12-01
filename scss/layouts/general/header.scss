@@ -1,0 +1,195 @@
+.header {
+	$this: &;
+
+	--header-text-color: var(--color-white);
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: zIndex("header");
+	width: 100%;
+	background-color: transparent;
+	border-bottom: 0.1rem solid var(--color-denim);
+	transition: all var(--animation-duration) var(--animation-timing-function);
+
+	&__inner,
+	&__interaction {
+		display: flex;
+		align-items: center;
+	}
+
+	&__inner {
+		justify-content: space-between;
+		padding: 1.9rem 0;
+		margin: 0 -1.5rem;
+
+		& > * {
+			padding: 0 1.5rem;
+		}
+	}
+
+	.logo {
+		position: relative;
+		z-index: zIndex("commonOver");
+	}
+
+	.logo__text,
+	.nav__link {
+		color: var(--header-text-color);
+	}
+
+	.nav-toggler {
+		display: none;
+	}
+
+	.nav-toggler__line {
+		background-color: var(--color-white);
+	}
+
+	.dropdown-languages__toggler {
+		.dropdown-languages__text {
+			color: var(--header-text-color);
+		}
+	}
+
+	.dropdown-languages {
+		margin-right: 1.8rem;
+	}
+
+	&__interaction {
+		flex-wrap: wrap;
+		width: 37rem;
+		max-width: 100%;
+	}
+
+	&__btn {
+		&--grad-on-hover {
+			position: relative;
+			z-index: zIndex("default");
+			overflow: hidden;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: zIndex("below");
+				content: " ";
+				background: linear-gradient(100.5deg, var(--bg-color-primary) 19.39%, var(--bg-color-secondary) 95.4%);
+				opacity: 0;
+				transition: opacity var(--animation-duration) var(--animation-timing-function);
+			}
+		}
+	}
+
+	// Modifiers for the section
+	&.is-reversed {
+		color: var(--text-color-accent);
+		background: var(--color-white);
+		border-color: transparent;
+		box-shadow: 0 -0.3rem 2rem rgba(1, 1, 1, 0.15);
+
+		.logo {
+			--logo-top-color: #5dc3e2;
+			--logo-middle-color: #3a8dcc;
+			--logo-middle-color-2: #276eb5;
+			--logo-bottom-color: #2954a1;
+			--logo-lines-color: #2954a1;
+		}
+
+		.logo__text,
+		.nav__link,
+		.dropdown-languages__text {
+			color: var(--text-color-accent);
+		}
+
+		.nav-toggler__line {
+			background-color: var(--bg-color-primary);
+		}
+
+		#{$this}__btn {
+			&--gray-on-hover {
+				color: var(--text-color-accent);
+				background: rgba(8, 104, 203, 0.1);
+				border-color: rgba(8, 104, 203, 0.1);
+
+				&:hover {
+					color: var(--color-white);
+					background-color: var(--bg-color-primary);
+					border-color: var(--bg-color-primary);
+				}
+			}
+
+			&--grad-on-hover {
+				color: var(--color-white);
+				background-color: var(--bg-color-primary);
+
+				&:hover {
+					&::before {
+						opacity: 1;
+					}
+
+					.btn__text {
+						color: var(--color-white);
+
+						&::before {
+							content: none;
+						}
+					}
+				}
+
+				&::before {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	&--single {
+		background-color: var(--bg-color-primary);
+	}
+}
+
+@include media("<=ipad-pro") {
+	.header {
+		&__inner {
+			margin: 0 -1rem;
+
+			& > * {
+				padding: 0 1rem;
+			}
+		}
+	}
+}
+
+@include media("<=md-desktop") {
+	.header {
+		.dropdown-languages {
+			margin-right: 1.2rem;
+		}
+
+		.dropdown-languages__toggler {
+			padding: 1.1rem 1.4rem;
+		}
+
+		.btngroup {
+			.btn {
+				padding: 1.4rem 2rem;
+			}
+		}
+	}
+}
+
+@include media("<=desktop") {
+	.header {
+		.nav-toggler {
+			display: flex;
+			justify-content: center;
+		}
+
+		&__interaction {
+			display: none;
+		}
+	}
+}

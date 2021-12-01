@@ -1,0 +1,40 @@
+.list-faq {
+	$this: &;
+
+	--faq-item-mb: 5.6rem;
+
+	margin-bottom: 0;
+
+	&.grid-filter {
+		#{$this}__item {
+			&:last-child {
+				margin-bottom: var(--faq-item-mb);
+			}
+		}
+	}
+
+	&__item {
+		margin-bottom: var(--faq-item-mb);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__titlegroup {
+		margin-bottom: 1.5rem;
+	}
+
+	.titlegroup__title {
+		color: var(--color-gray);
+		text-transform: capitalize;
+	}
+}
+
+@include media("<desktop") {
+	.list-faq {
+		&__item {
+			margin-bottom: 3rem;
+		}
+	}
+}

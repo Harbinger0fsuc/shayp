@@ -1,0 +1,79 @@
+.advantages {
+	padding: 8rem 0 7.5rem;
+
+	&__titlegroup {
+		margin-bottom: 9rem;
+	}
+
+	.grid-common {
+		--gap: 2.5rem;
+	}
+
+	.grid-common__col {
+		margin-bottom: 5rem;
+	}
+
+	.card-common__content {
+		width: 100%;
+		max-width: 30rem;
+	}
+
+	// Modifiers for the section
+	&--hardware {
+		padding-bottom: 2.5rem;
+	}
+}
+
+@include media("<desktop") {
+	.advantages {
+		padding: 6rem 0;
+
+		&__titlegroup {
+			margin-bottom: 6rem;
+		}
+
+		.card-common__content {
+			max-width: 100%;
+		}
+
+		// Modifiers for the section
+		&--homepage {
+			padding: 3.5rem 0 5rem;
+		}
+
+		&--hardware {
+			padding-bottom: 2rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.advantages {
+		&__titlegroup {
+			margin-bottom: 3rem;
+		}
+
+		.grid-common__col {
+			margin-bottom: 3.6rem;
+		}
+
+		// Modifiers for the section
+		&--software-first {
+			padding: 2rem 0;
+		}
+	}
+}
+
+@include media("<=phone") {
+	.advantages {
+		.grid-common,
+		.grid-common--two-columns {
+			.grid-common__col {
+				flex-basis: 90%;
+				width: 90%;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+	}
+}

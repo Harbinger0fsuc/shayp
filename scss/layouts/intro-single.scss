@@ -1,0 +1,172 @@
+.intro-single {
+	--col-lg-width: 60%;
+
+	padding: 20rem 0 3rem;
+	background: linear-gradient(176.85deg, var(--bg-color-primary) 47.05%, var(--bg-color-secondary) 142.3%, var(--bg-color-tertiary) 232.29%);
+	transition: all var(--animation-duration) var(--animation-timing-function);
+
+	&__main {
+		transition: all var(--animation-duration) var(--animation-timing-function);
+
+		&.is-fixed {
+			position: fixed;
+			top: 10.4rem;
+			left: 0;
+			z-index: zIndex("header") - 1;
+			width: 100%;
+			padding-top: 2.4rem;
+			background-color: var(--bg-color-primary);
+
+			.intro-goback__title {
+				pointer-events: all;
+				opacity: 1;
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		margin: 0 -1.5rem 2.2rem;
+
+		& > * {
+			padding: 0 1.5rem;
+		}
+	}
+
+	&__col {
+		position: relative;
+		display: flex;
+		width: 20%;
+
+		&--lg {
+			width: var(--col-lg-width);
+		}
+
+		&--next {
+			justify-content: flex-end;
+		}
+	}
+
+	.btn-link {
+		color: var(--color-white);
+	}
+
+	&__goback {
+		display: flex;
+		align-items: center;
+
+		& > * {
+			margin-right: 2.4rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__backbtn {
+		flex-shrink: 0;
+	}
+
+	.intro-goback__title {
+		margin-bottom: 0;
+		pointer-events: none;
+		opacity: 0;
+		transition: all var(--animation-duration) var(--animation-timing-function);
+	}
+
+	&__content {
+		position: relative;
+		width: var(--col-lg-width);
+		margin: 0 auto;
+	}
+
+	&__secondary {
+		position: relative;
+	}
+
+	&__decoration {
+		position: absolute;
+		bottom: 0;
+		width: max-content;
+		pointer-events: none;
+		opacity: 0.5 !important;
+
+		&--right {
+			left: 92.5%;
+		}
+	}
+}
+
+@include media("<=desktop") {
+	.intro-single {
+		padding-top: 15rem;
+	}
+}
+
+@include media("<desktop") {
+	.intro-single {
+		.intro-goback__title {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.intro-single {
+		$this: &;
+
+		&__main {
+			&.is-fixed {
+				padding-top: 1.8rem;
+
+				#{$this}__nav {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__nav {
+			flex-wrap: wrap;
+		}
+
+		&__col {
+			display: flex;
+			width: 50%;
+			margin-bottom: 2rem;
+
+			&--lg {
+				width: 100%;
+			}
+
+			&--back {
+				order: 3;
+			}
+
+			&--next {
+				order: 2;
+			}
+		}
+
+		&__decoration {
+			display: none;
+		}
+
+		&__goback,
+		&__backbtn,
+		&__content {
+			width: 100%;
+		}
+
+		&__goback {
+			& > * {
+				margin-right: 0;
+			}
+		}
+
+		.intro-goback__title {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,55 @@
+.s-downloads {
+	padding: 7.5rem 0;
+
+	&__inner {
+		padding: 8.8rem 19.6rem 12rem;
+		border: 0.2rem dashed rgba(27, 118, 216, 0.5);
+		border-radius: var(--radius-common);
+	}
+
+	&__titlegroup {
+		margin-bottom: 7rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-downloads {
+		padding: 6rem 0;
+
+		&__inner {
+			padding: 6rem 10rem 8rem;
+		}
+
+		&__titlegroup {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+@include media("<840px") {
+	.s-downloads {
+		&__inner {
+			padding: 5rem 6rem;
+		}
+	}
+}
+
+@include media("<=md-phone") {
+	.s-downloads {
+		&__inner {
+			padding: 4rem;
+		}
+	}
+}
+
+@include media("<xs-phone") {
+	.s-downloads {
+		&__inner {
+			padding: 3rem 2rem;
+		}
+
+		&__titlegroup {
+			margin-bottom: 2rem;
+		}
+	}
+}

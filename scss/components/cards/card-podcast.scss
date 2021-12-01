@@ -1,0 +1,36 @@
+.card-podcast {
+	padding: 2.4rem;
+	border: 0.2rem solid rgba(27, 118, 216, 0.2);
+	border-radius: var(--radius-tertiary);
+
+	&__header {
+		@include generalVertSpacing(0.8rem);
+
+		margin-bottom: 1.1rem;
+	}
+
+	&__title {
+		color: var(--text-color-accent);
+	}
+
+	&__creds {
+		font-size: 1.4rem;
+		color: var(--text-color-accent);
+	}
+
+	&__body {
+		margin-bottom: 3rem;
+	}
+
+	&__content {
+		@include generalVertSpacing(1.2rem);
+
+		font-size: var(--p-sm);
+	}
+}
+
+@include media("<=phone") {
+	.card-podcast {
+		padding: 1.5rem;
+	}
+}

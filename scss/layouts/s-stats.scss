@@ -1,0 +1,14 @@
+.s-stats {
+	padding: var(--padding, 7.5rem 0);
+}
+
+@include media("<desktop") {
+	.s-stats {
+		padding: 6rem 0;
+
+		// Modifiers for the section
+		&--homepage-empty {
+			padding: 5rem 0 9.6rem;
+		}
+	}
+}

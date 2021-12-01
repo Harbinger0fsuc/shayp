@@ -1,0 +1,39 @@
+.s-events {
+	padding: 8.5rem 0 7.5rem;
+
+	&__inner {
+		// modifiers for the element
+		&--sm {
+			width: 100%;
+			max-width: 85.2rem;
+		}
+	}
+
+	&__titlegroup {
+		margin-bottom: 4.5rem;
+	}
+
+	&__block-heading {
+		margin-bottom: 2rem;
+	}
+
+	.accordion__item {
+		margin-bottom: 3rem;
+	}
+
+	// Modifiers for the section
+	&--last-child {
+		padding-bottom: 16.6rem;
+	}
+}
+
+@include media("<desktop") {
+	.s-events {
+		padding: 7rem 0;
+
+		// Modifiers for the section
+		&--last-child {
+			padding-bottom: 14rem;
+		}
+	}
+}

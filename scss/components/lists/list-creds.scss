@@ -1,0 +1,39 @@
+.list-creds {
+	margin: 0;
+
+	&__item {
+		margin-bottom: 2.8rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		display: inline-flex;
+		padding-left: 3.5rem;
+		color: var(--text-color-accent);
+	}
+
+	&__ico {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		fill: currentColor;
+		transform: translateY(-50%);
+	}
+
+	&__text {
+		font-style: normal;
+		font-weight: 600;
+	}
+}
+
+@include media("<desktop") {
+	.list-creds {
+		&__item {
+			margin-bottom: 1.7rem;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.swiper-pagination {
+	display: flex;
+
+	&-bullet {
+		display: block;
+		width: 0.6rem;
+		height: 0.6rem;
+		margin-right: 1.6rem;
+		cursor: pointer;
+		background-color: var(--color-gray-light);
+		border-radius: 50%;
+		transition: transform var(--animation-duration) var(--animation-timing-function);
+
+		&-active {
+			background: linear-gradient(234.3deg, var(--bg-color-primary) -25.59%, var(--bg-color-secondary) 121.31%);
+			transform: scale(1.3);
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

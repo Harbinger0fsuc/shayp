@@ -1,0 +1,21 @@
+.elem-appearing-from-bottom {
+	transform-origin: center bottom;
+	animation: appearFromBottom 2s;
+}
+
+@keyframes appearFromBottom {
+	0% {
+		opacity: 0;
+		transform: scaleY(0);
+	}
+
+	45% {
+		opacity: 0;
+		transform: scaleY(0.5);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scaleY(1);
+	}
+}

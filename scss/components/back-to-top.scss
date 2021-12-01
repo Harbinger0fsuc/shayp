@@ -1,0 +1,57 @@
+.back-to-top {
+	position: fixed;
+	right: 10rem;
+	bottom: 10rem;
+	z-index: zIndex("commonOver");
+	pointer-events: none;
+	opacity: 0;
+	transition: all var(--animation-duration) var(--animation-timing-function);
+
+	.btn-to-top {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		font-weight: 400;
+		color: var(--text-color-accent);
+		text-align: center;
+	}
+
+	.btn-to-top__circle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 5.2rem;
+		height: 5.2rem;
+		margin-bottom: 0.8rem;
+		background-color: var(--color-white);
+		border: 0.1rem solid rgba(27, 118, 216, 0.3);
+		border-radius: 50%;
+	}
+
+	.btn-to-top__ico {
+		fill: currentColor;
+	}
+
+	.back-to-top__text {
+		font-size: 1.2rem;
+		text-transform: capitalize;
+	}
+
+	// Modifiers for the section
+	&.is-visible {
+		pointer-events: all;
+		opacity: 1;
+	}
+}
+
+@include media("<md-desktop") {
+	.back-to-top {
+		right: 5rem;
+	}
+}
+
+@include media("<desktop") {
+	.back-to-top {
+		display: none;
+	}
+}
